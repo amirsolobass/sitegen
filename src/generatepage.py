@@ -6,6 +6,7 @@ import os
 
 
 def generate_page(from_path, template_path, dest_path, basepath="/"):
+    print("DEBUG basepath in generate_page:", basepath)
     if not os.path.exists(from_path):
         raise FileNotFoundError(f"Source markdown file '{from_path}' does not exist.")
     if not os.path.isfile(from_path):
@@ -26,9 +27,11 @@ def generate_page(from_path, template_path, dest_path, basepath="/"):
     # extract title
     title = extract_title(content)
     # replace {{content}} and {{title}} in template
-    final_html = temp.replace("{{ Title }}", title).replace("{{ Content }}", html_content)
+    final_html = temp.replace("{{ Title }}", title)
+    final_html = final_html.replace("{{ Content }}", html_content)
     # replace href and src paths to be relative
-    final_html = final_html.replace('href="/', f'href="{basepath}').replace('src="/', f'src="{basepath}')
+    final_html = final_html.replace('href="/', 'href="' + basepath)
+    final_html = final_html.replace('src="/', 'src="' + basepath)
 
     # write to dest_path
 
@@ -43,7 +46,7 @@ def generate_pages_recursive(dir_path_content, template_path, dest_dir_path, bas
                 from_path = os.path.join(dirpath, filename)
                 relative_path = os.path.relpath(from_path, root)
                 dest_path = os.path.join(dest_dir_path, relative_path[:-3] + ".html")  # change .md to .html
-                generate_page(from_path, template_path, dest_path)
+                generate_page(from_path, template_path, dest_path, basepath)
     print("ROOT:", root)
     for dirpath, dirnames, filenames in os.walk(root):
         print("DIR:", dirpath)
