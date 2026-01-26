@@ -6,7 +6,6 @@ import os
 
 
 def generate_page(from_path, template_path, dest_path, basepath="/"):
-    print("DEBUG basepath in generate_page:", basepath)
     if not os.path.exists(from_path):
         raise FileNotFoundError(f"Source markdown file '{from_path}' does not exist.")
     if not os.path.isfile(from_path):
@@ -47,8 +46,3 @@ def generate_pages_recursive(dir_path_content, template_path, dest_dir_path, bas
                 relative_path = os.path.relpath(from_path, root)
                 dest_path = os.path.join(dest_dir_path, relative_path[:-3] + ".html")  # change .md to .html
                 generate_page(from_path, template_path, dest_path, basepath)
-    print("ROOT:", root)
-    for dirpath, dirnames, filenames in os.walk(root):
-        print("DIR:", dirpath)
-        for filename in filenames:
-            print("FILE:", filename)
