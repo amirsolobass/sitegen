@@ -57,6 +57,11 @@ class ParentNode(HTMLNode):
                 raise ValueError("All children of ParentNode must be HTMLNode instances")
             return f"<{self.tag}{props_html}>" + "".join(child.to_html() for child in self.children) + f"</{self.tag}>"
         
+    def add_child(self, child):
+        if self.children is None:
+            self.children = []
+        self.children.append(child)
+        
     def __repr__(self):
         return f"ParentNode({self.tag}, children: {self.children}, {self.props})"
     

@@ -9,12 +9,14 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
     new_nodes = []
     if not old_nodes:
         return []
+    
     if delimiter == "":
         new_nodes.extend(old_nodes)
         return new_nodes
     count = 0
     for node in old_nodes:
         if node.text_type != TextType.TEXT:
+            new_nodes.append(node)
             continue
         # how many times does `delimiter` appear in this node?
         if node.text.count(delimiter) % 2 != 0:
