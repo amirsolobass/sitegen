@@ -92,15 +92,6 @@ Extended Chords: maj9, m9, 9, m9b5, aug9, augmaj9, mmaj9
 
 Eleventh and Thirteenth: maj11, m11, 11, m11b5, aug11, augmaj11, mmaj11, maj13, m13, 13, m13b5, aug13, augmaj13, mmaj13
 
-## Project Structure
-
-- src/main.py - Main entry point
-- src/note_calc.py - Note calculation logic
-- src/scales.py - Scale and chord interval definitions
-- src/interval_maps.py - Music interval mappings
-- src/root_extraction.py - Chord parsing and root extraction
-- src/test_chordtonote.py - Test suite
-
 ## Development
 
 Run tests:
@@ -132,3 +123,5 @@ Feel free to open issues or submit pull requests for new features or bug fixes.
 - Music software development
 - Educational tools
 - Musicians' practice companion
+
+**[Back to the Main Page](/docs/sitegen/index.md)**

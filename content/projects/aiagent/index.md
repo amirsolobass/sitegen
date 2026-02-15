@@ -114,3 +114,6 @@ Always review generated code and use in controlled environments. Never expose yo
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests.
+
+
+**[Back to the Main Page](/docs/sitegen/index.md)**

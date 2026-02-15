@@ -5,7 +5,7 @@
 Everything here was made by me. Vibe coding was kept to a minimum.
 In fact, even this site was generated with a custom-built [static site generator](https://www.boot.dev/courses/build-static-site-generator-python) from the course on [Boot.dev](https://www.boot.dev).
 
-Have fun looking around, and feel free to [contact me!](/contact/index.md)
+Have fun looking around, and feel free to [contact me!](/contact/index.html)
 
 ---
 
