@@ -1,9 +1,6 @@
-# Contact the Author
+# Contact me
 
 [< Back Home](/)
 
-Give me a call anytime to chat about Tolkien!
-
-`555-555-5555`
-
-**"Váya márië."**
+Reach out to me, I like to talk about many things. We might even become friends.
+E-mail: amirsolobass@gmail.com

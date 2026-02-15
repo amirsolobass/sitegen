@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ChordToNote</title>
+    <link href="/index.css" rel="stylesheet" />
+</head>
+
+<body>
+    <article><div><h1>ChordToNote</h1><p>A simple command-line tool to convert chord names to their constituent notes. Perfect for musicians, students, and developers learning music theory.</p><h2>Features</h2><ul><li><b>Wide Chord Support</b> - Handles major, minor, seventh, ninth, eleventh, thirteenth chords, augmented, diminished, suspended, and power chords</li><li><b>Accidentals</b> - Supports sharps (#) and flats (b) in root notes</li><li><b>Slash Chords</b> - Includes bass notes</li><li><b>Case Insensitive</b> - Accepts chords in any case</li><li><b>Enharmonic Equivalents</b> - Automatically selects appropriate note names based on chord type</li><li><b>No Dependencies</b> - Pure Python implementation with no external requirements</li></ul><h2>Installation</h2><p>1. Clone or download the project: <code>bash cd chordtonote </code></p><p>2. Ensure Python 3.8+ is installed</p><p>3. No external dependencies required!</p><h2>Usage</h2><pre><code>python3 src/main.py YOUR_CHORD_HERE</code></pre><h3>Examples</h3><p>Basic chords:</p><p>```bash $ python3 src/main.py "C" Chord: C Notes: C E G</p><p>$ python3 src/main.py "Cm" Chord: Cm Notes: C Eb G ```</p><p>Seventh chords:</p><p>```bash $ python3 src/main.py "C7" Chord: C7 Notes: C E G Bb</p><p>$ python3 src/main.py "Cm7" Chord: Cm7 Notes: C Eb G Bb ```</p><p>Sharp/flat roots:</p><p>```bash $ python3 src/main.py "F#" Chord: F# Notes: F# A# C#</p><p>$ python3 src/main.py "Bb" Chord: Bb Notes: Bb D F ```</p><p>Slash chords:</p><pre><code>$ python3 src/main.py "Gm/E"
+Chord: Gminor/E
+Notes: E G Bb D</code></pre><p>Case insensitive:</p><pre><code>$ python3 src/main.py "bdIm"
+Chord: bdim
+Notes: B D F</code></pre><h2>Supported Chords</h2><p>Triads: major, minor, dim, aug, sus2, sus4, 5 (power)</p><p>Seventh Chords: maj7, m7, 7, m7b5, dim7, aug7, augmaj7, mmaj7, 7sus4, 7sus2</p><p>Extended Chords: maj9, m9, 9, m9b5, aug9, augmaj9, mmaj9</p><p>Eleventh and Thirteenth: maj11, m11, 11, m11b5, aug11, augmaj11, mmaj11, maj13, m13, 13, m13b5, aug13, augmaj13, mmaj13</p><h2>Project Structure</h2><ul><li>src/main.py - Main entry point</li><li>src/note_calc.py - Note calculation logic</li><li>src/scales.py - Scale and chord interval definitions</li><li>src/interval_maps.py - Music interval mappings</li><li>src/root_extraction.py - Chord parsing and root extraction</li><li>src/test_chordtonote.py - Test suite</li></ul><h2>Development</h2><p>Run tests: <code>bash python3 src/test_chordtonote.py </code></p><h2>Requirements</h2><ul><li>Python 3.8+</li><li>No external dependencies</li></ul><h2>Music Theory Background</h2><p>This tool is based on standard music theory: - Each chord consists of a root note plus intervals - Sharps and flats adjust note names - Slash chords add a specific bass note - Enharmonic equivalents are handled intelligently</p><h2>Contributing</h2><p>Feel free to open issues or submit pull requests for new features or bug fixes.</p><h2>Use Cases</h2><ul><li>Learning music theory</li><li>Chord-to-scale suggestions</li><li>Music software development</li><li>Educational tools</li><li>Musicians' practice companion</li></ul></div></article>
+</body>
+
+</html>

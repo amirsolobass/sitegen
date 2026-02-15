@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>bookbot</title>
+    <link href="/index.css" rel="stylesheet" />
+</head>
+
+<body>
+    <article><div><h1>bookbot</h1><p>def get<i>book</i>text(file<i>path): with open(file</i>path) as file: # Open the book file book<i>text = file.read() # Read the entire content return book</i>text</p><p>def main(): if len(sys.argv) != 2: # Check if book path is provided print("Usage: python3 main.py <path_to_book>") sys.exit(1) book_path = sys.argv[1] # Get book path from command line argument book_text = get_book_text(book_path) # Get book text count = count_words(book_text) # Count words char_counts = count_chars(book_text) # Count characters char_counts = sort_list(char_counts) # Sort character counts print("============ BOOKBOT ============") print(f"Analyzing book at: {book_path}") print("=================================") print(f"Found {count} total words") print("--------- Character Count -------") for char, count in char_counts: # Print each character and its count as a list print(f"{char}: {count}") print("============= END ===============")</p><p>main() ``` Also, I made this as my first <a href="https://www.boot.dev">Boot.dev</a> project, so I can't take all the credit. Please don't sue me for showing the solution for an entire course. That's all.</p><p><a href="/">< Back Home</a></p></div></article>
+</body>
+
+</html>

@@ -78,8 +78,12 @@ def block_to_html_node(block):
         list_items = []
         for line in lines:
             item_content = line[2:].strip()
-            text_nodes = text_to_textnodes(item_content)
-            html_children = [text_node_to_html_node(node) for node in text_nodes]
+            # Skip inline parsing if this line contains code block delimiters
+            if "```" in item_content:
+                html_children = [LeafNode("", item_content)]
+            else:
+                text_nodes = text_to_textnodes(item_content)
+                html_children = [text_node_to_html_node(node) for node in text_nodes]
             list_items.append(ParentNode("li", html_children))
         return ParentNode("ul", list_items)
 
@@ -87,8 +91,12 @@ def block_to_html_node(block):
         list_items = []
         for line in lines:
             item_content = re.sub(r"^\d+\. ", "", line).strip()
-            text_nodes = text_to_textnodes(item_content)
-            html_children = [text_node_to_html_node(node) for node in text_nodes]
+            # Skip inline parsing if this line contains code block delimiters
+            if "```" in item_content:
+                html_children = [LeafNode("", item_content)]
+            else:
+                text_nodes = text_to_textnodes(item_content)
+                html_children = [text_node_to_html_node(node) for node in text_nodes]
             list_items.append(ParentNode("li", html_children))
         return ParentNode("ol", list_items)
 

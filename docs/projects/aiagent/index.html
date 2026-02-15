@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Agent</title>
+    <link href="/index.css" rel="stylesheet" />
+</head>
+
+<body>
+    <article><div><h1>AI Agent</h1><p>An intelligent code assistant powered by Google's Gemini API, equipped with function calling capabilities to help with code generation, analysis, and automation tasks.</p><h2>Features</h2><ul><li>AI Powered Code Generation - Leverages Google's Gemini API for intelligent code suggestions and generation</li><li>Function Calling - Extended capabilities through dynamically callable functions</li><li>Multi turn Conversations - Maintains context across multiple interactions</li><li>Verbose Mode - Detailed output for debugging and understanding model responses</li><li>File Operations - Can read, write, and analyze project files</li><li>Content Generation - Automatically generate code and documentation</li></ul><h2>Installation</h2><p>1. Clone or download the project: <code>bash cd aiagent </code></p><p>2. Ensure Python 3.8+ is installed</p><p>3. Install dependencies using pip or your preferred package manager: <code>bash pip install -r requirements.txt </code></p><p>Or using the included pyproject.toml: <code>bash pip install . </code></p><p>4. Set up your environment: - Create a .env file or use apikey.env in the project root - Add your Google Gemini API key: <code> GEMINI_API_KEY=your_api_key_here </code></p><h2>Usage</h2><p>Run the AI agent with a prompt:</p><pre><code>python3 main.py "Your prompt here"</code></pre><h3>Examples</h3><p>- Generate Python code: <code>bash python3 main.py "Write a function to calculate fibonacci numbers" </code></p><p>- Analyze code: <code>bash python3 main.py "Review this code for best practices" </code></p><p>- Enable verbose output: <code>bash python3 main.py "Your prompt" --verbose </code></p><h2>Project Structure</h2><p>- main.py: Main entry point for the AI agent - config.py: Configuration settings - prompts.py: System prompts and prompt templates - call_function.py: Function calling orchestration - functions: Available functions the AI can call - generate_content.py: Generate new content - get_file_content.py: Read file contents - get_files_info.py: Get information about files - run_python_file.py: Execute Python files - write_file.py: Write or modify files - calculator: Example calculator module</p><h2>Testing</h2><p>Run the test suite:</p><pre><code>python3 test_get_file_content.py
+python3 test_get_files_info.py
+python3 test_run_python_file.py
+python3 test_write_file.py</code></pre><h2>Development</h2><p>The project uses available functions that the AI can call: - Content generation - File I/O operations - Python code execution</p><p>Extend functionality by adding new functions in the functions/ directory.</p><h2>Requirements</h2><ul><li>Python 3.8+</li><li>Google Gemini API key</li><li>Required Python packages (specified in pyproject.toml)</li></ul><h2>Safety Notice</h2><p>USE AT YOUR OWN RISK! This tool gives an AI model the ability to: - Execute Python code - Read and write files - Generate content</p><p>Always review generated code and use in controlled environments. Never expose your API keys in version control.</p><h2>Contributing</h2><p>Contributions are welcome! Feel free to open issues or submit pull requests.</p></div></article>
+</body>
+
+</html>

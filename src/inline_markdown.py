@@ -19,8 +19,15 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
             new_nodes.append(node)
             continue
         # how many times does `delimiter` appear in this node?
-        if node.text.count(delimiter) % 2 != 0:
-            raise ValueError("Unmatched delimiter in text node")
+        delimiter_count = node.text.count(delimiter)
+        if delimiter_count % 2 != 0:
+            # For backticks and underscores, if unmatched, just skip processing and return as-is
+            # This handles cases where they're part of code block markers or filenames
+            if delimiter in ["`", "_"]:
+                new_nodes.append(node)
+                continue
+            else:
+                raise ValueError(f"Unmatched delimiter '{delimiter}' in text node: {node.text}")
         # Split the text by the delimiter
         parts = node.text.split(delimiter)
         for i, part in enumerate(parts):
@@ -86,8 +93,8 @@ def split_nodes_link(old_node):
 def text_to_textnodes(text):
     nodes = [TextNode(text, TextType.TEXT)]
     nodes = split_nodes_delimiter(nodes, "**", TextType.BOLD)
-    nodes = split_nodes_delimiter(nodes, "_", TextType.ITALIC)
     nodes = split_nodes_delimiter(nodes, "`", TextType.CODE)
+    nodes = split_nodes_delimiter(nodes, "_", TextType.ITALIC)
     nodes = split_nodes_image(nodes)
     nodes = split_nodes_link(nodes)
     return nodes
