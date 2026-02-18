@@ -5,10 +5,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ Title }}</title>
-    <link href="/index.css" rel="stylesheet" />
+    <link href="{{ BasePath }}index.css" rel="stylesheet" />
 </head>
 
 <body>
+    <nav style="margin-bottom:18px;">
+        <a href="{{ BasePath }}">Home</a> |
+        <a href="{{ BasePath }}projects/">Projects</a> |
+        <a href="{{ BasePath }}contact/">Contact</a>
+    </nav>
     <article>{{ Content }}</article>
 </body>
 

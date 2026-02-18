@@ -28,7 +28,9 @@ def generate_page(from_path, template_path, dest_path, basepath="/"):
     # replace {{content}} and {{title}} in template
     final_html = temp.replace("{{ Title }}", title)
     final_html = final_html.replace("{{ Content }}", html_content)
-    # replace href and src paths to be relative
+    # replace BasePath placeholder first (permanent basepath support)
+    final_html = final_html.replace("{{ BasePath }}", basepath)
+    # replace legacy absolute href/src paths that start with "/" to use basepath
     final_html = final_html.replace('href="/', 'href="' + basepath)
     final_html = final_html.replace('src="/', 'src="' + basepath)
 
