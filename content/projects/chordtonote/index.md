@@ -124,4 +124,4 @@ Feel free to open issues or submit pull requests for new features or bug fixes.
 - Educational tools
 - Musicians' practice companion
 
-**[Back to the Main Page](/docs/sitegen/index.md)**
+**[Back to the Main Page](/)**

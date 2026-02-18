@@ -98,4 +98,4 @@ Feel free to fork and enhance! Possible improvements:
 - Most common words
 - Reading time estimates
 
-**[Back to the Main Page](/docs/sitegen/index.md)**
+**[Back to the Main Page](/)**
