@@ -31,8 +31,25 @@ def generate_page(from_path, template_path, dest_path, basepath="/"):
     # replace BasePath placeholder first (permanent basepath support)
     final_html = final_html.replace("{{ BasePath }}", basepath)
     # replace legacy absolute href/src paths that start with "/" to use basepath
-    final_html = final_html.replace('href="/', 'href="' + basepath)
-    final_html = final_html.replace('src="/', 'src="' + basepath)
+    # but avoid double-prefixing links that already include the basepath or point to `docs/`.
+    try:
+        import re
+        # when basepath is '/', no change required
+        if basepath != "/":
+            # strip leading slash for lookahead pattern
+            bp = basepath.lstrip('/')
+            # pattern: match href="/ not followed by basepath or docs/
+            href_pattern = r'href="/(?!' + re.escape(bp) + r'|docs/)'
+            src_pattern = r'src="/(?!' + re.escape(bp) + r'|docs/)'
+            final_html = re.sub(href_pattern, 'href="' + basepath, final_html)
+            final_html = re.sub(src_pattern, 'src="' + basepath, final_html)
+        else:
+            # basepath is root, no changes necessary for absolute paths
+            pass
+    except Exception:
+        # fallback to simple replace if regex fails for any reason
+        final_html = final_html.replace('href="/', 'href="' + basepath)
+        final_html = final_html.replace('src="/', 'src="' + basepath)
 
     # write to dest_path
 

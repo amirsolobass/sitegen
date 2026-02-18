@@ -5,14 +5,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ChordToNote</title>
-    <link href="/sitegen/sitegen/index.css" rel="stylesheet" />
+    <link href="/sitegen/index.css" rel="stylesheet" />
 </head>
 
 <body>
     <nav style="margin-bottom:18px;">
-        <a href="/sitegen/sitegen/">Home</a> |
-        <a href="/sitegen/sitegen/projects/">Projects</a> |
-        <a href="/sitegen/sitegen/contact/">Contact</a>
+        <a href="/sitegen/">Home</a> |
+        <a href="/sitegen/projects/">Projects</a> |
+        <a href="/sitegen/contact/">Contact</a>
     </nav>
     <article><div><h1>ChordToNote</h1><p>A simple command-line tool to convert chord names to their constituent notes. Perfect for musicians, students, and developers learning music theory.</p><h2>Features</h2><ul><li><b>Wide Chord Support</b> - Handles major, minor, seventh, ninth, eleventh, thirteenth chords, augmented, diminished, suspended, and power chords</li><li><b>Accidentals</b> - Supports sharps (#) and flats (b) in root notes</li><li><b>Slash Chords</b> - Includes bass notes</li><li><b>Case Insensitive</b> - Accepts chords in any case</li><li><b>Enharmonic Equivalents</b> - Automatically selects appropriate note names based on chord type</li><li><b>No Dependencies</b> - Pure Python implementation with no external requirements</li></ul><h2>Installation</h2><p>1. Clone or download the project: <code>bash cd chordtonote </code></p><p>2. Ensure Python 3.8+ is installed</p><p>3. No external dependencies required!</p><h2>Usage</h2><pre><code>python3 src/main.py YOUR_CHORD_HERE</code></pre><h3>Examples</h3><p>Basic chords:</p><p>```bash $ python3 src/main.py "C" Chord: C Notes: C E G</p><p>$ python3 src/main.py "Cm" Chord: Cm Notes: C Eb G ```</p><p>Seventh chords:</p><p>```bash $ python3 src/main.py "C7" Chord: C7 Notes: C E G Bb</p><p>$ python3 src/main.py "Cm7" Chord: Cm7 Notes: C Eb G Bb ```</p><p>Sharp/flat roots:</p><p>```bash $ python3 src/main.py "F#" Chord: F# Notes: F# A# C#</p><p>$ python3 src/main.py "Bb" Chord: Bb Notes: Bb D F ```</p><p>Slash chords:</p><pre><code>$ python3 src/main.py "Gm/E"
 Chord: Gminor/E
