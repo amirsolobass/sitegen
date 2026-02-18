@@ -50,6 +50,11 @@ def generate_page(from_path, template_path, dest_path, basepath="/"):
         # fallback to simple replace if regex fails for any reason
         final_html = final_html.replace('href="/', 'href="' + basepath)
         final_html = final_html.replace('src="/', 'src="' + basepath)
+    # Normalize any accidental /docs/ prefixes in links (some markdown had /docs/ references)
+    final_html = final_html.replace('href="/docs/', 'href="' + basepath)
+    final_html = final_html.replace('src="/docs/', 'src="' + basepath)
+    final_html = final_html.replace('href="' + basepath + 'docs/', 'href="' + basepath)
+    final_html = final_html.replace('src="' + basepath + 'docs/', 'src="' + basepath)
 
     # write to dest_path
 
