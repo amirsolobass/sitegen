@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>gatoRSS</title>
+    <link href="/sitegen/index.css" rel="stylesheet" />
+</head>
+
+<body class="project-page">
+    <header>
+        <nav>
+            <a href="/sitegen/">Home</a>
+            <a href="/sitegen/projects/">Projects</a>
+            <a href="/sitegen/about/">About</a>
+            <a href="/sitegen/contact/">Contact</a>
+        </nav>
+    </header>
+    <div class="meta"><div class="badges"><span class="badge">TypeScript</span><span class="badge">Node.js</span><span class="badge">PostgreSQL</span><span class="badge">Drizzle ORM</span><span class="badge">XML Parsing</span></div>
+<div class="meta-links"><a class="meta-link" href="https://github.com/amirsolobass/gator" target="_blank" rel="noopener">View on GitHub</a></div></div>
+    <main>
+        <article><div><h1>gatoRSS</h1><p>A command-line RSS feed aggregator with user management, feed subscriptions, and a scheduled background aggregation loop — all backed by PostgreSQL.</p><h2>Features</h2><ul><li>Multi-user support with persistent sessions</li><li>Subscribe and unsubscribe from RSS feeds</li><li>Scheduled aggregation: fetch and store posts on a configurable interval</li><li>Browse aggregated posts from your followed feeds</li><li>Command registry pattern: easily extensible with new CLI commands</li></ul><h2>How It Works</h2><p>gatoRSS is built around a <b>command dispatcher</b> — each CLI argument maps to a registered handler function. User state is persisted in PostgreSQL and accessed through <b>Drizzle ORM</b>, keeping the database layer typed and migration-friendly.</p><p>Feed content is fetched over HTTP and parsed from XML using <code>fast-xml-parser</code>. The aggregation loop runs on a configurable timer, polling each followed feed and writing new items to the database without duplicates.</p><h2>Tech Stack</h2><ul><li><b>Language</b>: TypeScript (Node.js)</li><li><b>Database</b>: PostgreSQL via Drizzle ORM</li><li><b>RSS Parsing</b>: fast-xml-parser</li><li><b>Auth</b>: User session stored in DB</li><li><b>Runner</b>: tsx (TypeScript execution)</li></ul></div></article>
+    </main>
+    <footer>
+        <a href="https://github.com/amirsolobass" target="_blank" rel="noopener">GitHub</a>
+        &mdash;
+        <a href="mailto:amirsolobass@gmail.com">amirsolobass@gmail.com</a>
+    </footer>
+</body>
+
+</html>

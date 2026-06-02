@@ -1,20 +1,31 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Solo's Projects</title>
-    <link href="/index.css" rel="stylesheet" />
+    <title>Amir Solomon</title>
+    <link href="/sitegen/index.css" rel="stylesheet" />
 </head>
 
-<body>
-    <nav style="margin-bottom:18px;">
-        <a href="/">Home</a> |
-        <a href="/projects/">Projects</a> |
-        <a href="/contact/">Contact</a>
-    </nav>
-    <article><div><h1>Solo's Projects</h1><h2>Welcome to my personal projects site!</h2><p>Everything here was made by me. Vibe coding was kept to a minimum. In fact, even this site was generated with a custom-built <a href="https://www.boot.dev/courses/build-static-site-generator-python">static site generator</a> from the course on <a href="https://www.boot.dev">Boot.dev</a>.</p><p>Have fun looking around, and feel free to <a href="/contact/">contact me!</a></p><p>---</p><h2>Featured Projects</h2><h3><a href="/projects/aiagent/index.html">AI Agent</a></h3><p><b>Tech</b>: Python, Google Gemini API, Multi-turn Conversations</p><h3><a href="/projects/bookbot/index.html">BookBot</a></h3><p><b>Tech</b>: Python, File I/O, Data Analysis</p><p><b>Note</b>: This was my first Boot.dev project - a simple yet functional text analysis tool!</p><h3><a href="/projects/chordtonote/index.html">ChordToNote</a></h3><p><b>Tech</b>: Python, Music Theory, Pure Python (no dependencies)</p><p>---</p><h2>About This Site</h2><p>This portfolio is built with Python and statically generated. You can find the source code on GitHub! Each project has complete installation instructions and usage examples.</p></div></article>
+<body class="home-page">
+    <header>
+        <nav>
+            <a href="/sitegen/">Home</a>
+            <a href="/sitegen/projects/">Projects</a>
+            <a href="/sitegen/about/">About</a>
+            <a href="/sitegen/contact/">Contact</a>
+        </nav>
+    </header>
+    <div class="meta"></div>
+    <main>
+        <article><div><h1>Amir Solomon</h1><p>Developer, musician, and sound designer. I build software that ranges from chess engines and REST APIs to AI coding assistants — all from scratch, no shortcuts.</p><h2>Featured Projects</h2><h3><a href="/sitegen/projects/chess/">Chess Engine</a></h3><p>A fully functional chess game with an AI opponent built in vanilla JavaScript — zero dependencies. The AI uses minimax search with alpha-beta pruning, quiescence search, and piece-square table evaluation. Enforces every rule: castling, en passant, pawn promotion, threefold repetition, and the 50-move rule.</p><p><b>Tech</b>: JavaScript, Minimax, Alpha-Beta Pruning, Docker</p><h3><a href="/sitegen/projects/server/">Server</a></h3><p>A production-ready REST API built with Express 5, featuring JWT authentication, argon2 password hashing, Drizzle ORM with PostgreSQL, webhook handling, admin metrics, and a full test suite with Vitest.</p><p><b>Tech</b>: TypeScript, Express 5, PostgreSQL, Drizzle ORM, JWT, Argon2</p><h3><a href="/sitegen/projects/pca/">PCA — Personal Coding Assistant</a></h3><p>An AI agent powered by Google's Gemini API. Accepts a natural-language prompt and autonomously reads files, writes code, and executes Python scripts through a function-calling architecture with up to 20 iterations.</p><p><b>Tech</b>: Python, Google Gemini API, Function Calling</p><h3><a href="/sitegen/projects/claude-assist/">Claude Assist</a></h3><p>A port of PCA rebuilt on the Anthropic Claude API — showcasing tool use, multi-turn agentic loops, and prompt caching for efficient repeated calls.</p><p><b>Tech</b>: Python, Anthropic Claude API, Tool Use, Prompt Caching</p><p><a href="/sitegen/projects/">View all projects</a> &nbsp;&middot;&nbsp; <a href="/sitegen/about/">About me</a> &nbsp;&middot;&nbsp; <a href="/sitegen/contact/">Contact</a></p></div></article>
+    </main>
+    <footer>
+        <a href="https://github.com/amirsolobass" target="_blank" rel="noopener">GitHub</a>
+        &mdash;
+        <a href="mailto:amirsolobass@gmail.com">amirsolobass@gmail.com</a>
+    </footer>
 </body>
 
 </html>

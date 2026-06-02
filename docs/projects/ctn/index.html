@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CTN — ChordToNote</title>
+    <link href="/sitegen/index.css" rel="stylesheet" />
+</head>
+
+<body class="project-page">
+    <header>
+        <nav>
+            <a href="/sitegen/">Home</a>
+            <a href="/sitegen/projects/">Projects</a>
+            <a href="/sitegen/about/">About</a>
+            <a href="/sitegen/contact/">Contact</a>
+        </nav>
+    </header>
+    <div class="meta"><div class="badges"><span class="badge">Python</span><span class="badge">Music Theory</span></div>
+<div class="meta-links"><a class="meta-link" href="https://github.com/amirsolobass/chordtonote" target="_blank" rel="noopener">View on GitHub</a></div></div>
+    <main>
+        <article><div><h1>CTN — ChordToNote</h1><p>A command-line tool that converts chord names to their constituent notes. Handles a wide range of chord types including extended harmonies and slash chords. No dependencies — pure Python.</p><h2>Features</h2><ul><li><b>Major, minor, dominant</b>: standard triads and seventh chords</li><li><b>Extended chords</b>: 9ths, 11ths, 13ths (maj9, m11, aug13, etc.)</li><li><b>Altered and suspended</b>: dim, aug, sus2, sus4, power (5), half-diminished</li><li><b>Accidentals</b>: sharps and flats in root notes (<code>F#</code>, <code>Bb</code>)</li><li><b>Slash chords</b>: specify a bass note independent of the chord root (<code>Gm/E</code>)</li><li><b>Enharmonic equivalents</b>: picks the correct spelling based on context</li><li><b>Case insensitive</b>: <code>Cm7</code>, <code>CM7</code>, and <code>cm7</code> all work</li></ul><h2>Examples</h2><p>```bash $ python3 src/main.py "Cm7" Chord: Cm7 Notes: C Eb G Bb</p><p>$ python3 src/main.py "F#maj7" Chord: F#maj7 Notes: F# A# C# F</p><p>$ python3 src/main.py "Gm/E" Chord: Gminor/E Notes: E G Bb D ```</p><h2>Supported Chord Types</h2><ul><li>Triads: major, minor, dim, aug, sus2, sus4, power (5)</li><li>Seventh chords: maj7, m7, 7, m7b5, dim7, aug7, augmaj7, mmaj7, 7sus4, 7sus2</li><li>Extended: maj9, m9, 9, m9b5, aug9, augmaj9, mmaj9</li><li>Eleventh and thirteenth: maj11 through mmaj13 (full matrix)</li></ul><h2>How It Works</h2><p>The program parses the chord name to extract a root note and a chord quality suffix. It then maps that quality to an interval pattern (e.g. minor seventh = <code>[0, 3, 7, 10]</code>) and applies the intervals to the root, with enharmonic correction to pick the most readable note names.</p><p>Slash chords are split on <code>/</code> and the bass note is prepended to the note list.</p><h2>Tech Stack</h2><ul><li><b>Language</b>: Python 3.8+</li><li><b>Dependencies</b>: None</li></ul></div></article>
+    </main>
+    <footer>
+        <a href="https://github.com/amirsolobass" target="_blank" rel="noopener">GitHub</a>
+        &mdash;
+        <a href="mailto:amirsolobass@gmail.com">amirsolobass@gmail.com</a>
+    </footer>
+</body>
+
+</html>

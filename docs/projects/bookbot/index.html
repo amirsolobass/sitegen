@@ -1,29 +1,41 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>BookBot</title>
-    <link href="/index.css" rel="stylesheet" />
+    <link href="/sitegen/index.css" rel="stylesheet" />
 </head>
 
-<body>
-    <nav style="margin-bottom:18px;">
-        <a href="/">Home</a> |
-        <a href="/projects/">Projects</a> |
-        <a href="/contact/">Contact</a>
-    </nav>
-    <article><div><h1>BookBot</h1><p>BookBot is a command-line tool for analyzing text files. It provides detailed statistics about words and character frequencies in any book or text document.</p><h2>Features</h2><ul><li><b>Word Count</b>: Get the total number of words in your document</li><li><b>Character Frequency Analysis</b>: See detailed counts of every character</li><li><b>Simple CLI</b>: Easy-to-use command-line interface</li><li><b>Formatted Output</b>: Clean, readable output with organized statistics</li><li><b>Any Text File</b>: Works with any txt file or text based document</li></ul><h2>Installation</h2><p>1. Clone or download the project: <code>bash cd bookbot </code></p><p>2. Ensure Python 3.8+ is installed</p><p>3. No external dependencies required! Just standard Python libraries.</p><h2>Usage</h2><p>Analyze any text file with a simple command:</p><pre><code>python3 main.py path/to/your/book.txt</code></pre><h3>Examples</h3><p>- Analyze Frankenstein: <code>bash python3 main.py books/frankenstein.txt </code></p><p>- Analyze Pride and Prejudice: <code>bash python3 main.py books/prideandprejudice.txt </code></p><p>- Analyze Moby Dick: <code>bash python3 main.py books/mobydick.txt </code></p><h3>Output Example</h3><pre><code>============ BOOKBOT ============
+<body class="project-page">
+    <header>
+        <nav>
+            <a href="/sitegen/">Home</a>
+            <a href="/sitegen/projects/">Projects</a>
+            <a href="/sitegen/about/">About</a>
+            <a href="/sitegen/contact/">Contact</a>
+        </nav>
+    </header>
+    <div class="meta"><div class="badges"><span class="badge">Python</span><span class="badge">File I/O</span><span class="badge">Data Analysis</span></div>
+<div class="meta-links"><a class="meta-link" href="https://github.com/amirsolobass/bookbot" target="_blank" rel="noopener">View on GitHub</a></div></div>
+    <main>
+        <article><div><h1>BookBot</h1><p>A command-line tool for analyzing text files. Give it any document and it returns a word count plus a sorted character frequency table. My first Boot.dev project.</p><h2>Features</h2><ul><li>Total word count</li><li>Character frequency analysis (case-insensitive)</li><li>Results sorted by frequency, highest to lowest</li><li>Works with any plain text file</li><li>No external dependencies — pure Python stdlib</li></ul><h2>Usage</h2><pre><code>python3 main.py books/frankenstein.txt</code></pre><p>Output:</p><pre><code>============ BOOKBOT ============
 Analyzing book at: books/frankenstein.txt
 =================================
 Found 73115 total words
 --------- Character Count -------
-a: 5231
-b: 1298
-c: 2456
+e: 46043
+t: 30365
+a: 26743
 ...
-============= END ===============</code></pre><h2>Project Structure</h2><p>- main.py - Main entry point, handles file reading and output formatting - stats.py - Core statistics functions - count words function - Counts total words - count chars function - Counts character frequencies - sort list function - Sorts results for display - books folder - Sample text files for analysis - frankenstein.txt - mobydick.txt - prideandprejudice.txt</p><h2>How It Works</h2><ol><li>Read the specified text file</li><li>Count total words by splitting on whitespace</li><li>Count frequency of each character using case insensitive comparison</li><li>Sort results by frequency (highest to lowest)</li><li>Display formatted results</li></ol><h2>Requirements</h2><ul><li>Python 3.6+</li><li>A text file to analyze</li></ul><h2>About</h2><p>BookBot is my first Boot.dev project. It demonstrates foundational Python skills including file input output, data processing, and command line interface development.</p><h2>Contributing</h2><p>Feel free to fork and enhance! Possible improvements: - Sentence and paragraph counting - Average word length - Most common words - Reading time estimates</p><p>**<a href="/">Back to the Main Page</a>**</p></div></article>
+============= END ===============</code></pre><h2>How It Works</h2><ol><li>Read the file into a string</li><li>Split on whitespace to count words</li><li>Iterate over every character, incrementing a frequency counter (lowercased)</li><li>Sort the counter by value descending</li><li>Print the formatted report</li></ol><h2>Tech Stack</h2><ul><li><b>Language</b>: Python</li><li><b>Libraries</b>: Python stdlib only (<code>sys</code>, <code>os</code>)</li></ul></div></article>
+    </main>
+    <footer>
+        <a href="https://github.com/amirsolobass" target="_blank" rel="noopener">GitHub</a>
+        &mdash;
+        <a href="mailto:amirsolobass@gmail.com">amirsolobass@gmail.com</a>
+    </footer>
 </body>
 
 </html>

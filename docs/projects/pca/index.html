@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PCA — Personal Coding Assistant</title>
+    <link href="/sitegen/index.css" rel="stylesheet" />
+</head>
+
+<body class="project-page">
+    <header>
+        <nav>
+            <a href="/sitegen/">Home</a>
+            <a href="/sitegen/projects/">Projects</a>
+            <a href="/sitegen/about/">About</a>
+            <a href="/sitegen/contact/">Contact</a>
+        </nav>
+    </header>
+    <div class="meta"><div class="badges"><span class="badge">Python</span><span class="badge">Google Gemini API</span><span class="badge">Function Calling</span></div>
+<div class="meta-links"><a class="meta-link" href="https://github.com/amirsolobass/aiagent" target="_blank" rel="noopener">View on GitHub</a></div></div>
+    <main>
+        <article><div><h1>PCA — Personal Coding Assistant</h1><p>An AI agent powered by Google's Gemini API that takes a natural-language prompt and autonomously reads files, writes code, and executes Python scripts — iterating up to 20 times until the task is complete.</p><h2>Features</h2><ul><li><b>Function calling</b>: the model decides which tools to invoke based on the task</li><li><b>File operations</b>: read files, list directories, write or modify code</li><li><b>Code execution</b>: run Python scripts and feed the output back to the model</li><li><b>Multi-turn loop</b>: continues iterating until it reaches a final answer or the step limit</li><li><b>Verbose mode</b>: log each function call and response for debugging</li></ul><h2>How It Works</h2><p>PCA sends a user prompt to Gemini with a set of available function declarations. When the model decides to call a function, PCA executes it and sends the result back as the next input. This continues until the model returns a final text response with no pending function calls.</p><p>The function registry includes:</p><ul><li><code>get_file_content</code> — read any file in the working directory</li><li><code>get_files_info</code> — list files and metadata in a directory</li><li><code>write_file</code> — write or overwrite a file with new content</li><li><code>run_python_file</code> — execute a Python script and capture stdout/stderr</li></ul><p>Each function is a plain Python function registered by name. Adding new capabilities is a matter of adding a new file to <code>functions/</code> and registering it.</p><h2>Usage</h2><pre><code>python3 main.py "refactor main.py to use type hints throughout"
+python3 main.py "write unit tests for stats.py" --verbose</code></pre><h2>Tech Stack</h2><ul><li><b>Language</b>: Python 3.13+</li><li><b>AI API</b>: Google Gemini (google-genai SDK)</li><li><b>Config</b>: python-dotenv for API key management</li><li><b>Architecture</b>: Function-calling agent loop (up to 20 iterations)</li></ul></div></article>
+    </main>
+    <footer>
+        <a href="https://github.com/amirsolobass" target="_blank" rel="noopener">GitHub</a>
+        &mdash;
+        <a href="mailto:amirsolobass@gmail.com">amirsolobass@gmail.com</a>
+    </footer>
+</body>
+
+</html>

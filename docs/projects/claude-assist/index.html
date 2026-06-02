@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claude Assist</title>
+    <link href="/sitegen/index.css" rel="stylesheet" />
+</head>
+
+<body class="project-page">
+    <header>
+        <nav>
+            <a href="/sitegen/">Home</a>
+            <a href="/sitegen/projects/">Projects</a>
+            <a href="/sitegen/about/">About</a>
+            <a href="/sitegen/contact/">Contact</a>
+        </nav>
+    </header>
+    <div class="meta"><div class="badges"><span class="badge">Python</span><span class="badge">Claude API</span><span class="badge">Tool Use</span><span class="badge">Prompt Caching</span></div>
+<div class="meta-links"><a class="meta-link" href="https://github.com/amirsolobass/claude-assist" target="_blank" rel="noopener">View on GitHub</a></div></div>
+    <main>
+        <article><div><h1>Claude Assist</h1><p>An AI coding agent powered by Anthropic's Claude API. Give it a natural-language task and it autonomously reads files, writes code, and runs Python scripts — iterating until the task is complete or a step limit is reached. Built as a port of PCA (the Gemini-based agent) to study the differences between Google and Anthropic's function-calling APIs.</p><h2>Features</h2><ul><li><b>Tool use</b>: Claude decides which tools to call based on the task</li><li><b>File operations</b>: read files, list directories, write or overwrite code</li><li><b>Code execution</b>: run Python scripts and feed stdout/stderr back to the model</li><li><b>Multi-turn loop</b>: continues until <code>stop_reason == "end_turn"</code> or 20 iterations</li><li><b>Prompt caching</b>: system prompt marked with <code>cache_control</code> to reduce repeated token costs</li><li><b>Verbose mode</b>: log each tool call name, input, and truncated result</li></ul><h2>How It Works</h2><p>The agent loop sends the user prompt to Claude with a set of tool definitions. When Claude responds with <code>stop_reason == "tool_use"</code>, the agent extracts each <code>tool_use</code> block, calls the corresponding Python function, and appends a <code>tool_result</code> message. This continues until Claude returns a final text response.</p><pre><code>while True:
+    response = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=8096,
+        system=system,  # cache_control: ephemeral on system prompt
+        tools=TOOLS,
+        messages=messages,
+    )
+    if response.stop_reason == "end_turn":
+        break
+    # extract tool_use blocks, call functions, append tool_result</code></pre><h2>Usage</h2><pre><code>python3 src/main.py "list files in the working directory"
+python3 src/main.py "fix the bug in fix_bug.py" --verbose
+python3 src/main.py "write unit tests for main.py" --dir ./my_project</code></pre><h2>Comparison with PCA (Gemini)</h2><p>The core agent loop is structurally identical — both iterate on tool calls until a final response. The main differences are in the API shape:</p><ul><li>Tool schemas use Anthropic's JSON Schema format instead of <code>google.genai.types.FunctionDeclaration</code></li><li><code>stop_reason == "tool_use"</code> replaces checking for <code>function_call</code> parts in the Gemini response</li><li>Prompt caching is explicit via <code>cache_control</code> on the system message</li><li>The Anthropic SDK is strictly typed — <code>response.content</code> is a list of typed blocks (<code>TextBlock</code>, <code>ToolUseBlock</code>)</li></ul><h2>Tech Stack</h2><ul><li><b>Language</b>: Python 3.10+</li><li><b>AI API</b>: Anthropic Claude (anthropic SDK)</li><li><b>Model</b>: claude-sonnet-4-6</li><li><b>Config</b>: python-dotenv for API key management</li><li><b>Architecture</b>: Tool-use agent loop (up to 20 iterations)</li></ul></div></article>
+    </main>
+    <footer>
+        <a href="https://github.com/amirsolobass" target="_blank" rel="noopener">GitHub</a>
+        &mdash;
+        <a href="mailto:amirsolobass@gmail.com">amirsolobass@gmail.com</a>
+    </footer>
+</body>
+
+</html>

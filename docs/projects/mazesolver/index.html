@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maze Solver</title>
+    <link href="/sitegen/index.css" rel="stylesheet" />
+</head>
+
+<body class="project-page">
+    <header>
+        <nav>
+            <a href="/sitegen/">Home</a>
+            <a href="/sitegen/projects/">Projects</a>
+            <a href="/sitegen/about/">About</a>
+            <a href="/sitegen/contact/">Contact</a>
+        </nav>
+    </header>
+    <div class="meta"><div class="badges"><span class="badge">Python</span><span class="badge">Tkinter</span><span class="badge">Algorithms</span></div>
+<div class="meta-links"><a class="meta-link" href="https://github.com/amirsolobass/mazesolver" target="_blank" rel="noopener">View on GitHub</a></div></div>
+    <main>
+        <article><div><h1>Maze Solver</h1><p>Generates random mazes and solves them in real time with graphical visualization. Built with a custom drawing library on top of Python's tkinter.</p><h2>Features</h2><ul><li>Procedural maze generation</li><li>Animated pathfinding solver with visual step-by-step rendering</li><li>Custom graphics library (cells, walls, lines) built on tkinter</li><li>Interactive window with menu system</li><li>Unit test suite for the maze and cell logic</li></ul><h2>How It Works</h2><p>The maze is represented as a <b>grid of cells</b>, each with four walls that can be open or closed. Generation carves passages using a recursive algorithm, producing a connected maze with a unique solution path.</p><p>The solver then traverses the maze using depth-first search, drawing the explored path live in the window. Backtracking is shown in a different color, so you can see the algorithm think.</p><p>The graphics layer draws directly to a tkinter <code>Canvas</code>, with custom abstractions for lines and cells that keep the algorithm code clean.</p><h2>Tech Stack</h2><ul><li><b>Language</b>: Python</li><li><b>Graphics</b>: tkinter (custom drawing library)</li><li><b>Algorithms</b>: Recursive backtracking (generation), DFS (solving)</li><li><b>Testing</b>: Python unittest</li></ul></div></article>
+    </main>
+    <footer>
+        <a href="https://github.com/amirsolobass" target="_blank" rel="noopener">GitHub</a>
+        &mdash;
+        <a href="mailto:amirsolobass@gmail.com">amirsolobass@gmail.com</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tubeify</title>
+    <link href="/sitegen/index.css" rel="stylesheet" />
+</head>
+
+<body class="project-page">
+    <header>
+        <nav>
+            <a href="/sitegen/">Home</a>
+            <a href="/sitegen/projects/">Projects</a>
+            <a href="/sitegen/about/">About</a>
+            <a href="/sitegen/contact/">Contact</a>
+        </nav>
+    </header>
+    <div class="meta"><div class="badges"><span class="badge">TypeScript</span><span class="badge">Bun</span><span class="badge">SQLite</span><span class="badge">AWS S3</span><span class="badge">CloudFront</span><span class="badge">FFMPEG</span><span class="badge">JWT</span></div>
+<div class="meta-links"><a class="meta-link" href="https://github.com/amirsolobass/learnfilestorage" target="_blank" rel="noopener">View on GitHub</a></div></div>
+    <main>
+        <article><div><h1>Tubeify</h1><p>A media file server and CDN application — upload videos and images, process them server-side with FFMPEG, and serve them efficiently via AWS S3 and CloudFront. Built as part of Boot.dev's file storage and CDN course.</p><h2>Features</h2><ul><li>Video and image upload with metadata extraction</li><li>Server-side transcoding and thumbnail generation via FFMPEG</li><li>Cloud storage with AWS S3 and CloudFront CDN delivery</li><li>JWT-based authentication</li><li>SQLite database for media metadata</li><li>Sample media download script for local development</li></ul><h2>How It Works</h2><p>Uploads hit the Bun HTTP server, which validates the JWT and passes the file to an <b>FFMPEG pipeline</b> for transcoding (video → optimized format, images → resized thumbnails). Processed files are pushed to <b>S3</b>, and CloudFront serves them to clients via a CDN edge — reducing latency and keeping origin load low.</p><p>Bun's native file APIs make streaming uploads and responses fast without needing a separate streaming library.</p><h2>Tech Stack</h2><ul><li><b>Runtime</b>: Bun</li><li><b>Language</b>: TypeScript</li><li><b>Database</b>: SQLite (via Bun's native SQLite)</li><li><b>Media processing</b>: FFMPEG</li><li><b>Cloud storage</b>: AWS S3</li><li><b>CDN</b>: AWS CloudFront</li><li><b>Auth</b>: JWT (jsonwebtoken)</li></ul></div></article>
+    </main>
+    <footer>
+        <a href="https://github.com/amirsolobass" target="_blank" rel="noopener">GitHub</a>
+        &mdash;
+        <a href="mailto:amirsolobass@gmail.com">amirsolobass@gmail.com</a>
+    </footer>
+</body>
+
+</html>

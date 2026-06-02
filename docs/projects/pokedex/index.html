@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pokedex</title>
+    <link href="/sitegen/index.css" rel="stylesheet" />
+</head>
+
+<body class="project-page">
+    <header>
+        <nav>
+            <a href="/sitegen/">Home</a>
+            <a href="/sitegen/projects/">Projects</a>
+            <a href="/sitegen/about/">About</a>
+            <a href="/sitegen/contact/">Contact</a>
+        </nav>
+    </header>
+    <div class="meta"><div class="badges"><span class="badge">TypeScript</span><span class="badge">Node.js</span><span class="badge">REST API</span><span class="badge">Caching</span></div>
+<div class="meta-links"><a class="meta-link" href="https://github.com/amirsolobass/pokedex" target="_blank" rel="noopener">View on GitHub</a></div></div>
+    <main>
+        <article><div><h1>Pokedex</h1><p>An interactive REPL for exploring Pokémon data — fetched from the PokéAPI, cached locally, and persisted between sessions.</p><h2>Features</h2><ul><li>Interactive command-line REPL with a modular command registry</li><li>In-memory caching layer (<code>pokecache</code>) to avoid redundant API calls</li><li>Persistent state saved to disk between sessions (<code>save.json</code>)</li><li>Commands: explore locations, catch Pokémon, inspect your party</li><li>Unit tests with Vitest</li></ul><h2>How It Works</h2><p>Each REPL command maps to a handler that can access shared state, make API requests, and mutate the pokecache. The <b>cache</b> stores API responses keyed by URL with a configurable TTL — subsequent calls for the same resource are served instantly without hitting the network.</p><p>State (your caught Pokémon, explored areas) is serialized to <code>save.json</code> on exit and reloaded on startup, giving the REPL persistence across sessions.</p><h2>Tech Stack</h2><ul><li><b>Language</b>: TypeScript (Node.js)</li><li><b>API</b>: PokéAPI (REST)</li><li><b>Caching</b>: Custom in-memory cache with TTL</li><li><b>Persistence</b>: JSON file (<code>save.json</code>)</li><li><b>Testing</b>: Vitest</li></ul></div></article>
+    </main>
+    <footer>
+        <a href="https://github.com/amirsolobass" target="_blank" rel="noopener">GitHub</a>
+        &mdash;
+        <a href="mailto:amirsolobass@gmail.com">amirsolobass@gmail.com</a>
+    </footer>
+</body>
+
+</html>

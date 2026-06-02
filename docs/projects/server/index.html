@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Server</title>
+    <link href="/sitegen/index.css" rel="stylesheet" />
+</head>
+
+<body class="project-page">
+    <header>
+        <nav>
+            <a href="/sitegen/">Home</a>
+            <a href="/sitegen/projects/">Projects</a>
+            <a href="/sitegen/about/">About</a>
+            <a href="/sitegen/contact/">Contact</a>
+        </nav>
+    </header>
+    <div class="meta"><div class="badges"><span class="badge">TypeScript</span><span class="badge">Express 5</span><span class="badge">PostgreSQL</span><span class="badge">Drizzle ORM</span><span class="badge">JWT</span><span class="badge">Argon2</span><span class="badge">Vitest</span></div>
+<div class="meta-links"><a class="meta-link" href="https://github.com/amirsolobass/server" target="_blank" rel="noopener">View on GitHub</a></div></div>
+    <main>
+        <article><div><h1>Server</h1><p>A production-ready REST API server built with Express 5. Covers the full backend stack: authentication, database access, webhooks, admin metrics, and a complete test suite.</p><h2>Features</h2><ul><li>User registration and login with <b>JWT</b> authentication</li><li><b>Argon2</b> password hashing (resistant to GPU and ASIC attacks)</li><li>Chirps (posts): create, retrieve, and delete</li><li>Webhook endpoint for external integrations</li><li>Admin metrics and usage tracking</li><li>Database migrations with Drizzle ORM</li><li>Full test suite with Vitest</li></ul><h2>Architecture</h2><p>The API follows a clean <b>middleware → handler → database</b> pipeline. Every protected route runs through a JWT validation middleware that extracts and verifies the token before the handler ever sees the request.</p><p>Passwords are never stored — only argon2 hashes, which are memory-hard by design. Database access is fully typed through <b>Drizzle ORM</b>, keeping queries safe and schema changes trackable via migrations.</p><p>The metrics endpoint surfaces request counts and error rates for observability without needing an external tool.</p><h2>Tech Stack</h2><ul><li><b>Language</b>: TypeScript</li><li><b>Framework</b>: Express 5</li><li><b>Database</b>: PostgreSQL via Drizzle ORM</li><li><b>Auth</b>: JWT (jsonwebtoken)</li><li><b>Password hashing</b>: Argon2</li><li><b>Testing</b>: Vitest</li></ul></div></article>
+    </main>
+    <footer>
+        <a href="https://github.com/amirsolobass" target="_blank" rel="noopener">GitHub</a>
+        &mdash;
+        <a href="mailto:amirsolobass@gmail.com">amirsolobass@gmail.com</a>
+    </footer>
+</body>
+
+</html>

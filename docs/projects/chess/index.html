@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chess Engine</title>
+    <link href="/sitegen/index.css" rel="stylesheet" />
+</head>
+
+<body class="project-page">
+    <header>
+        <nav>
+            <a href="/sitegen/">Home</a>
+            <a href="/sitegen/projects/">Projects</a>
+            <a href="/sitegen/about/">About</a>
+            <a href="/sitegen/contact/">Contact</a>
+        </nav>
+    </header>
+    <div class="meta"><div class="badges"><span class="badge">JavaScript</span><span class="badge">Minimax</span><span class="badge">Alpha-Beta Pruning</span><span class="badge">Docker</span></div>
+<div class="meta-links"><a class="meta-link" href="https://github.com/amirsolobass/chess" target="_blank" rel="noopener">View on GitHub</a></div></div>
+    <main>
+        <article><div><h1>Chess Engine</h1><p>A fully functional chess game with an AI opponent — built in vanilla JavaScript with zero external dependencies. Everything from the board rendering to the move generation to the AI search was written from scratch.</p><h2>Features</h2><ul><li>Full chess rule enforcement: castling, en passant, pawn promotion (with piece selection), check, checkmate, stalemate</li><li>Draw detection: 50-move rule, threefold repetition</li><li>Three AI difficulty levels using configurable search depth</li><li>Algebraic notation move history (e.g. <code>e4</code>, <code>Nf3</code>, <code>O-O</code>)</li><li>FEN string support for importing/exporting board positions</li><li>Undo move functionality</li><li>Docker support for local serving</li></ul><h2>How the AI Works</h2><p>The AI uses <b>minimax search with alpha-beta pruning</b>, which prunes branches that can't affect the final decision — dramatically reducing the number of positions evaluated.</p><p>On top of that:</p><ul><li><b>Quiescence search</b> extends the search at leaf nodes when captures are available, preventing the AI from stopping mid-sequence and misreading a position</li><li><b>MVV-LVA move ordering</b> (Most Valuable Victim, Least Valuable Attacker) sorts captures to try the best moves first, maximizing pruning efficiency</li><li><b>Piece-square tables</b> bias the evaluation function toward good piece placement — knights in the center score higher than knights on the rim, for example</li></ul><p>At difficulty 3 (depth 4), the AI plays solid, aggressive chess and will punish obvious mistakes.</p><h2>Tech Stack</h2><ul><li><b>Language</b>: Vanilla JavaScript (ES6+)</li><li><b>UI</b>: DOM manipulation, CSS Grid for the board</li><li><b>AI</b>: Minimax + alpha-beta pruning, quiescence search</li><li><b>Serving</b>: Docker + static HTTP server</li><li><b>Dependencies</b>: None</li></ul></div></article>
+    </main>
+    <footer>
+        <a href="https://github.com/amirsolobass" target="_blank" rel="noopener">GitHub</a>
+        &mdash;
+        <a href="mailto:amirsolobass@gmail.com">amirsolobass@gmail.com</a>
+    </footer>
+</body>
+
+</html>
