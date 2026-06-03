@@ -285,11 +285,18 @@ body.projects-page article ul li {
     border-radius: 8px;
     padding: 18px 20px;
     transition: border-color 0.2s, transform 0.15s;
+    position: relative;
 }
 
 body.projects-page article ul li:hover {
     border-color: #dda15e66;
     transform: translateY(-2px);
+}
+
+body.projects-page article ul li a:first-of-type::after {
+    content: '';
+    position: absolute;
+    inset: 0;
 }
 
 /* ── Scrollbar ── */
